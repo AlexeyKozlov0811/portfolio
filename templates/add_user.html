@@ -9,8 +9,43 @@
             <input id="email" name="email" type="email">
             <input type="submit">
         </form>
-    {% for user in Users %}
-        <li>{{ user.username }}</li>
-    {% endfor %}
+{#        {% for user in Users %}#}
+{#            <li>{{ user.username }}</li>#}
+{#        {% endfor %}#}
+        <div id="app">
+            [[ band ]]
+        </div>
+
+        <div id="app-4">
+          <ol>
+            <li v-for="todo in todos">
+              [[ todo.text ]]
+            </li>
+          </ol>
+        </div>
     </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                band: {}
+            },
+            methods: {
+                fetchData: function () {
+                    this.$http.get('/api/users').then(response =>{
+                        this.band = response.body;
+                    }, response =>{
+                        console.log("error");
+                    });
+                }
+            },
+            mounted: function(){
+                this.fetchData();
+            },
+            delimiters: ['[[',']]']
+        });
+    </script>
 {% endblock %}

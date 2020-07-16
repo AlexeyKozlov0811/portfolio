@@ -3,9 +3,10 @@ module app.py contains main portfolio code
 dont forget to set up ENV variables FLASK_APP, FLASK_ENV before run
 """
 
-from flask import Flask, request, render_template, url_for, redirect
+from flask import Flask, request, render_template, url_for, redirect, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Resource, Api
+from sqlalchemy_serializer import SerializerMixin
 
 app = Flask(__name__)
 api = Api(app)
@@ -21,7 +22,7 @@ data base entities section
 
 # test entity
 # TODO delete later
-class User(db.Model):
+class User(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
@@ -78,8 +79,13 @@ class HelloWorld(Resource):
     def get(self, name):
         return {'hello': name}
 
+class ViewAllUsers(Resource):
+    def get(self):
+        return jsonify([i.to_dict() for i in User.query.all()])
+
 
 api.add_resource(HelloWorld, '/api/<string:name>')
+api.add_resource(ViewAllUsers, '/api/users')
 
 if __name__ == '__main__':
     app.run()
