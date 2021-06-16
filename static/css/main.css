@@ -1,0 +1,264 @@
+:root{
+    --space_for_sections: 80px 0;
+    --header_space: 30px;
+    --min_grid_column: 350px;
+}
+
+html{
+    width: 100%;
+}
+
+*{
+    font-family: "Century Schoolbook", serif;
+}
+
+.wrapper{
+    padding: 0 15%;
+}
+
+@media only screen and (max-width: 650px){
+    .wrapper{
+        padding: 0 10%;
+    }
+}
+
+p{
+    text-align: justify;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 45px;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li{
+    display: inline;
+    height: 41px;
+}
+
+body a:active{
+    text-decoration: none;
+}
+
+body a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+header nav ul li a{
+    color: black;
+    line-height: 42px;
+    margin-right: 10px;
+}
+
+header nav .main_nav{
+    width: 701px
+}
+
+a.button{
+    line-height: 40px;
+    background-color: #00b894;
+    border: none;
+    display: inline-block;
+    color: white;
+    height: 41px;
+    text-align: center;
+    margin-right: 0;
+    padding: 0 52px;
+}
+
+header article{
+    padding: var(--space_for_sections);
+}
+
+span{
+    color: #00b894;
+    font-weight: bold;
+}
+
+.about article{
+    padding: var(--space_for_sections);
+}
+
+/*.about div{*/
+/*    !*display: flex;*!*/
+/*    justify-content: space-between;*/
+/*}*/
+
+.services_wrapper h1 {
+    text-align: center;
+}
+
+.services_grid{
+    padding: var(--space_for_sections);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min_grid_column), 1fr));
+}
+
+.experience_wrapper{
+    background-color: #00b894;
+}
+
+.experience_wrapper h1{
+    text-align: center;
+    color: white;
+    padding-top: var(--header_space);
+}
+
+.experience_wrapper article{
+    padding: var(--space_for_sections);
+}
+
+.experience_wrapper p{
+    width: 100%;
+    height: 140px;
+    background-color: white;
+    padding: 10px;
+}
+
+.projects_wrapper div.wrapper{
+    padding: var(--space_for_sections);
+}
+
+.projects_grid table td{
+    vertical-align: middle;
+}
+
+.projects_wrapper h1{
+    padding-bottom: 30px;
+}
+
+.projects_grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min_grid_column), 1fr));
+
+}
+
+.projects_grid article{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.projects_grid article img{
+    width: 100%;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    z-index: 1;
+    opacity:1;
+    transition: all .5s;
+}
+
+.projects_grid article table{
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.projects_grid article img:hover{
+    opacity: 0;
+}
+
+.projects_grid article table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.contacts_wrapper{
+    background-color: #00b894;
+}
+
+.contacts_wrapper h1{
+    text-align: center;
+    color: white;
+    padding-top: var(--header_space);
+}
+
+.contacts {
+    color: white;
+    display: flex;
+    justify-content: left;
+}
+
+.contacts article{
+    padding: 10px 0;
+}
+
+.contacts article img{
+    display: block;
+    margin: 10px 0;
+}
+
+.contacts article p{
+    padding: 30px 10px;
+}
+
+.credits.wrapper{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min_grid_column), 1fr));
+}
+
+.credits h1{
+    padding-top: var(--header_space);
+}
+
+.credits a{
+    display: block;
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.credits form{
+    display: grid;
+    grid-template-columns: 1fr 45px;
+    grid-template-rows: 1fr;
+}
+
+.credits input{
+    width: 100%;
+    border: gray 1px solid;
+    border-right: none;
+    height: 45px;
+    padding: 4px 15px;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.credits button{
+    /*position: absolute;*/
+    padding: 6px 0;
+    width: 45px;
+    height: 45px;
+    border: #00b894 1px solid;
+    background-color: #00b894;
+    line-height: 10px;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    /*align-self: end;*/
+}
+
+footer{
+    color: gray;
+}
+

@@ -58,8 +58,8 @@ routes section
 
 @app.route('/')
 def index():
-    Users = User.query.all()
-    return render_template("add_user.html", Users=Users)
+    # Users = User.query.all()
+    return render_template("index.html")
 
 
 @app.route('/about/<string:name>')
