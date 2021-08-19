@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Portfolio</title>
@@ -12,90 +12,110 @@
     <header class="wrapper" style="background: url({{ url_for('static', filename='images/Image shape.png')}}) no-repeat">
         <nav>
             <ul>
-{#              <li><a href="">EN</a></li>#}
-{#              <li><a href="">UA</a></li>#}
+              <!-- <li><a href="">EN</a></li>
+              <li><a href="">UA</a></li> -->
             </ul>
             <ul class="main_nav">
-                <li><a href="#about">Про мене</a></li>
-                <li><a href="#services">Послуги</a></li>
-                <li><a href="#experience">Досвід</a></li>
-                <li><a href="#projects">Проекти</a></li>
-                <li><a href="#contacts" class="button">Контакти</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#services">Services</a></li>
+                <!-- <li><a href="#experience">Experience</a></li> -->
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contacts" class="button">Contacts</a></li>
             </ul>
         </nav>
         <article>
-            <h3>Вітаю, моє ім'я <span>Олексій Козлов</span></h3>
-            <h2>Я Junior Python Developer</h2>
-            <h3>І це мій сайт-портфоліо</h3>
-            <p>Ласкаво прошу ознайомитися із наданою інформацією</p>
-            <a href="" class="button">Завантажити коротку версію</a>
+            <h3>Hi, my name is <span>Alexey Kozlov</span></h3>
+            <h2>I am a Junior Python Developer</h2>
+            <a href="{{ url_for('static', filename='cv/Alexey_Kozlov_junior_python_developer_cv.pdf') }}" class="button" download>Download PDF</a>
         </article>
     </header>
 
     <section class="about wrapper">
         <a name="about"></a>
         <article>
-            <h1>Про мене</h1>
+            <h1>About me</h1>
             <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form,
-                by injected humour, or randomised words which don't look even
-                slightly believable.If you are going to use a passage of
-                Lorem Ipsum, you need to be sure there isn't anything.
+                Young, ambitious, highly motivated computer engineering bachelor. Looking forward to start a software developer career.
             </p>
         </article>
-{#        <canvas></canvas>#}
+        <!-- <canvas></canvas> -->
     </section>
 
     <section class="services_wrapper wrapper">
         <a name="services"></a>
-        <h1>Послуги</h1>
+        <h1>Services</h1>
         <section class="services_grid">
-            <article>
-{#                <img src="{{ url_for('static', filename='images/backend.png') }}" alt="">#}
-                <h3>Back-end development</h3>
-                <p>
-                    There are many variations of passages of Lorem Ipsum available,
-                    but the majority have suffered alteration
-                </p>
+            <article id="backend">
+                <!-- <img src="{{ url_for('static', filename='images/backend.png') }}" alt=""> -->
+                <div>
+                    <h3>Back-end development</h3>
+                    <p>
+                        Server-side of web applications using Python programming language with Django, Flask or FastAPI frameworks
+                    </p>
+                </div>
             </article>
-            <article>
-{#                <img src="{{ url_for('static', filename='images/fronend.png') }}" alt="">#}
-                <h3>Front-end development</h3>
-                <p>
-                    There are many variations of passages of Lorem Ipsum available,
-                    but the majority have suffered alteration
-                </p>
-            </article>
-            <article>
-{#                <img src="{{ url_for('static', filename='images/fronend.png') }}" alt="">#}
+
+            <!-- <article id="botdev" style="display: none;">
+                <img src="{{ url_for('static', filename='images/fronend.png') }}" alt="">
                 <h3>Telegram bot development</h3>
                 <p>
                     There are many variations of passages of Lorem Ipsum available,
                     but the majority have suffered alteration
                 </p>
-            </article>
+            </article> -->
         </section>
     </section>
 
-    <section class="experience_wrapper wrapper">
+    <!-- <section class="experience_wrapper wrapper"">
         <a name="experience"></a>
-        <h1>Досвід</h1>
+        <h1>Experience</h1>
         <article>
             <p>
                 There are many variations of passages of Lorem Ipsum available,
                 but the majority have suffered alteration
             </p>
         </article>
-    </section>
+    </section> -->
 
     <section class="projects_wrapper wrapper">
         <a name="projects"></a>
         <div class="wrapper">
-            <h1>Проекти</h1>
+            <h1>Projects</h1>
             <section class="projects_grid">
-                <article>
-                    <img src="{{ url_for('static', filename='images/project_tmp.png') }}" alt="">
+
+                <article id="Antiplag">
+                    <a href="https://github.com/AlexeyKozlov0811/Antiplag" target="_blank"><img src="{{ url_for('static', filename='images/Antiplag.png') }}" alt="Antiplag main page. Click to visit repostiory"></a>
+                    <table>
+                        <tr>
+                            <td>
+                                <h3>Antiplag</h3>
+                                <h4>Client: National Aviation University</h4>
+                                <p>
+                                    A web application that detects plagiarism using an internal database and searching fragments of texts on the internet. 
+                                    Later was used as a bachelor's diploma.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </article>
+
+                <article id="Portfolio">
+                    <a href="https://github.com/AlexeyKozlov0811/portfolio" target="_blank"><img src="{{ url_for('static', filename='images/Portfolio.png') }}" alt="Portfolio main page. Click to visit repostiory"></a>
+                    <table>
+                        <tr>
+                            <td>
+                                <h3>Portfolio</h3>
+                                <h4>Client: myself</h4>
+                                <p>
+                                    My portfolio landing page
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </article>
+
+                <article id="blank" style="display: none;">
+                    <a href="" target="_blank"><img src="{{ url_for('static', filename='images/project_tmp.png') }}" alt=""></a>
                     <table>
                         <tr>
                             <td>
@@ -109,77 +129,49 @@
                         </tr>
                     </table>
                 </article>
-                <article>
-                    <img src="{{ url_for('static', filename='images/project_tmp.png') }}" alt="">
-                    <table>
-                        <tr>
-                            <td>
-                                <h3>Project Name</h3>
-                                <h4>Client: 123</h4>
-                                <p>
-                                    There are many variations of passages of Lorem Ipsum available,
-                                    but the majority have suffered alteration
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </article>
-                <article>
-                    <img src="{{ url_for('static', filename='images/project_tmp.png') }}" alt="">
-                    <table>
-                        <tr>
-                            <td>
-                                <h3>Project Name</h3>
-                                <h4>Client: 123</h4>
-                                <p>
-                                    There are many variations of passages of Lorem Ipsum available,
-                                    but the majority have suffered alteration
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </article>
+
             </section>
         </div>
     </section>
 
     <section class="contacts_wrapper wrapper">
         <a name="contacts"></a>
-        <h1>Контакти</h1>
+        <h1>Contacts</h1>
         <section class="contacts">
             <article>
                 <img src="{{ url_for('static', filename='images/phone.png') }}" alt="">
                 <img src="{{ url_for('static', filename='images/email.png') }}" alt="" width="90" height="70">
             </article>
             <article>
-                <p>111 111 11 11</p>
-                <p>1111111111@gmail.com</p>
+                <p>+38(066)476-15-38</p>
+                <p><a href="mailto:alexeykozlov0811@gmail.com">alexeykozlov0811@gmail.com</a></p>
             </article>
         </section>
     </section>
 
     <section class="credits wrapper">
         <article>
-            <h1>Швидкі посилання</h1>
-            <a href="#about">Про мене</a>
-            <a href="#services">Послуги</a>
-            <a href="#experience">Досвід</a>
-            <a href="#projects">Проекти</a>
-            <a href="#contacts">Контакти</a>
+            <h1>Quick links</h1>
+            <a href="#about">About me</a>
+            <a href="#services">Services</a>
+            <!-- <a href="#experience"">Experience</a> -->
+            <a href="#projects">Projects</a>
+            <a href="#contacts">Contacts</a>
         </article>
-        <article>
-            <h1>Підписатися на новини</h1>
+
+        <!-- <article">
+            <h1>Subscribe to news</h1>
             <form id="sub" action="#">
                 <input type="email" placeholder="Email">
                 <button form="sub"><img src="{{ url_for('static', filename='images/arrow.png') }}" alt=""></button>
             </form>
-        </article>
+        </article> -->
     </section>
 
     <footer>
         <hr>
         <div class="wrapper">
-            <p>Авторське право @Я Всі права захищені.</p>
+            <p>@me</p>
         </div>
     </footer>
 

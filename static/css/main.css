@@ -88,12 +88,16 @@ span{
     padding: var(--space_for_sections);
 }
 
-/*.about div{*/
-/*    !*display: flex;*!*/
-/*    justify-content: space-between;*/
-/*}*/
+
+/* comment later */
+.services_wrapper {
+    background-color: #00b894;
+    color: white;
+}
+
 
 .services_wrapper h1 {
+    padding-top: var(--header_space);
     text-align: center;
 }
 
@@ -151,6 +155,10 @@ span{
     grid-template-rows: 1fr;
 }
 
+.projects_grid article a{
+    display: contents;
+}
+
 .projects_grid article img{
     width: 100%;
     grid-row-start: 1;
@@ -181,6 +189,10 @@ span{
 
 .contacts_wrapper{
     background-color: #00b894;
+}
+
+.contacts_wrapper a{
+    color: white;
 }
 
 .contacts_wrapper h1{
