@@ -12,9 +12,6 @@ on:
     branches:
       - master
   workflow_dispatch:
-permissions:
-  id-token: write
-  contents: read
 
 jobs:
   ci:
