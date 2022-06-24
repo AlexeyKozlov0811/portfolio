@@ -6,6 +6,7 @@ env:
   EB_ENVIRONMENT: "Flasktest-env"
   DEPLOY_PACKAGE_NAME: "flask_test_${{ github.sha }}.zip"
   AWS_REGION_NAME: "eu-central"
+  AWS_ROLE: "arn:aws:iam::138346991906:role/github_actions_role"
 
 on:
   push:
@@ -13,8 +14,8 @@ on:
       - master
   workflow_dispatch:
 permissions:
-      id-token: write
-      contents: read
+  id-token: write
+  contents: read
 
 jobs:
   ci:
@@ -28,8 +29,9 @@ jobs:
         run: zip -r ${{env.DEPLOY_PACKAGE_NAME}} ./ -x *.git*
         
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@master
+        uses: aws-actions/configure-aws-credentials@v1
         with:
+          role-to-assume: ${{ env.AWS_ROLE }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ${{ env.AWS_REGION_NAME }}
