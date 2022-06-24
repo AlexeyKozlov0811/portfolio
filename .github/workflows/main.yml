@@ -5,8 +5,7 @@ env:
   EB_APPLICATION_NAME: "FlaskTest"
   EB_ENVIRONMENT: "Flasktest-env"
   DEPLOY_PACKAGE_NAME: "flask_test_${{ github.sha }}.zip"
-  AWS_REGION_NAME: "eu-central"
-  AWS_ROLE: "arn:aws:iam::138346991906:role/github_actions_role"
+  AWS_REGION_NAME: "eu-central-1"
 
 on:
   push:
@@ -31,7 +30,6 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: ${{ env.AWS_ROLE }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ${{ env.AWS_REGION_NAME }}
